@@ -2,7 +2,6 @@ const loginToAccount = async (
   page: any,
   login: string,
   password: string,
-  setData: (value: string) => void
 ) => {
   const usernameInput = await page.$('input[name="username"]');
 
@@ -16,7 +15,7 @@ const loginToAccount = async (
 
   await confirmButton.click();
 
-  setData("авторизовался под выбранным профилем");
+  console.log("авторизовался под выбранным профилем");
 };
 
 export default loginToAccount;

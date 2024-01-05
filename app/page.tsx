@@ -11,10 +11,9 @@ function App() {
     <main className="flex items-center justify-center flex-col min-h-full">
       <form
         className="my-10 flex items-center justify-center flex-col gap-7"
-        action={async (data) => {
-          setCurrentProccesState("процесс начался");
-          const statusResponce = await serverSubmit(data);
-          setCurrentProccesState(statusResponce);
+        action={serverSubmit}
+        onSubmit={() => {
+          setCurrentProccesState("Процесс запущен");
         }}
       >
         <Typography variant="h4">Данные для начала автолайка:</Typography>

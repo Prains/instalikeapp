@@ -19,7 +19,7 @@ const likePost = async (page: any) => {
 
 const bot = async (login: string, password: string, tag: string) => {
   const browser = await playwright.chromium.launch({
-    headless: false, // setting this to true will not run the UI
+    headless: true, // setting this to true will not run the UI
   });
 
   const page = await browser.newPage();
@@ -30,7 +30,7 @@ const bot = async (login: string, password: string, tag: string) => {
 
   console.log("зашел в инстаграмм");
 
-  await loginToAccount(page, login, password, console.log);
+  await loginToAccount(page, login, password);
 
   await page.waitForTimeout(10000);
 
